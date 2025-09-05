@@ -11,9 +11,10 @@
     <meta name="author" content="José Manuel Forzán">
     <meta property="og:title" content="José Manuel Forzán - Fisioterapia y Entrenamiento en Escalada">
     <meta property="og:description" content="Recupera tu movilidad con tratamientos especializados en fisioterapia y mejora tu rendimiento en escalada con un entrenador experimentado.">
-    <meta property="og:image" content="https://via.placeholder.com/400x300?text=José+Manuel+Forzán">
+    <meta property="og:image" content="https://via.placeholder.com/400x300/27ae60/ffffff?text=Fisioterapeuta+en+Escalada+-+José+Manuel+Forzán">
     <meta property="og:url" content="https://forzanman.github.io">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://via.placeholder.com/400x300/27ae60/ffffff?text=Fisioterapeuta+en+Escalada+-+José+Manuel+Forzán">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -25,22 +26,22 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav role="navigation" aria-label="Navegación principal">
             <div class="logo">
-                <h1>José Manuel Forzán</h1>
+                <img src="logo.svg" alt="ForzanMan Logo - Fisioterapia y Escalada" style="height: 50px;">
             </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#acerca">Acerca de</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#inicio" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="#acerca" role="menuitem">Acerca de</a></li>
+                <li role="none"><a href="#servicios" role="menuitem">Servicios</a></li>
+                <li role="none"><a href="#testimonios" role="menuitem">Testimonios</a></li>
+                <li role="none"><a href="#blog" role="menuitem">Blog</a></li>
+                <li role="none"><a href="#contacto" role="menuitem">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero" role="banner">
         <div class="hero-content">
             <h2>Recupera tu Movilidad y Conquista Nuevas Alturas</h2>
             <p>Licenciado en Fisioterapia y Entrenador de Escalada con más de 10 años de experiencia</p>
@@ -48,147 +49,174 @@
         </div>
     </section>
 
-    <section id="acerca" class="about">
-        <div class="container">
-            <h2>Acerca de José Manuel</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy José Manuel Forzán, licenciado en Fisioterapia con especialización en medicina física. Mi pasión por el movimiento y la salud me ha llevado a combinar mi expertise en terapia física con mi experiencia como entrenador de muro de escalada.</p>
-                    <p>Con más de 10 años guiando a escaladores de todos los niveles, he desarrollado un enfoque único que integra técnicas de fisioterapia preventiva y correctiva para optimizar el rendimiento deportivo y prevenir lesiones.</p>
-                    <p>Mi objetivo es ayudarte a recuperar tu movilidad, aliviar dolores crónicos y alcanzar tus metas físicas, ya sea en la vida diaria o en el deporte de escalada.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/400x300?text=José+Manuel+Forzán" alt="José Manuel Forzán">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="services">
-        <div class="container">
-            <h2>Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Fisioterapia Especializada</h3>
-                    <p>Tratamientos personalizados para lesiones deportivas, dolores crónicos y rehabilitación post-quirúrgica.</p>
-                    <ul>
-                        <li>Valoración inicial completa</li>
-                        <li>Técnicas manuales avanzadas</li>
-                        <li>Ejercicios terapéuticos</li>
-                        <li>Prevención de lesiones</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Entrenamiento en Escalada</h3>
-                    <p>Clases individuales y grupales para todos los niveles, desde principiantes hasta escaladores avanzados.</p>
-                    <ul>
-                        <li>Técnicas de escalada segura</li>
-                        <li>Entrenamiento de fuerza específico</li>
-                        <li>Preparación física integral</li>
-                        <li>Entrenamiento mental</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Evaluación Postural</h3>
-                    <p>Análisis completo de tu postura y movimiento para identificar riesgos y áreas de mejora.</p>
-                    <ul>
-                        <li>Análisis biomecánico</li>
-                        <li>Recomendaciones personalizadas</li>
-                        <li>Ejercicios correctivos</li>
-                        <li>Seguimiento del progreso</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Consultas Online</h3>
-                    <p>Sesiones de fisioterapia y asesoramiento deportivo a distancia para mayor comodidad.</p>
-                    <ul>
-                        <li>Evaluación remota</li>
-                        <li>Planes de ejercicio personalizados</li>
-                        <li>Seguimiento virtual</li>
-                        <li>Soporte continuo</li>
-                    </ul>
+    <main role="main">
+        <section id="acerca" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title">Acerca de José Manuel</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Soy José Manuel Forzán, licenciado en Fisioterapia con especialización en medicina física. Mi pasión por el movimiento y la salud me ha llevado a combinar mi expertise en terapia física con mi experiencia como entrenador de muro de escalada.</p>
+                        <p>Con más de 10 años guiando a escaladores de todos los niveles, he desarrollado un enfoque único que integra técnicas de fisioterapia preventiva y correctiva para optimizar el rendimiento deportivo y prevenir lesiones.</p>
+                        <p>Mi objetivo es ayudarte a recuperar tu movilidad, aliviar dolores crónicos y alcanzar tus metas físicas, ya sea en la vida diaria o en el deporte de escalada.</p>
+                    </div>
+                    <div class="about-image">
+                        <!-- Avatar simple (CSS) -->
+                        <div class="simple-avatar" role="img" aria-label="Ilustración de José Manuel Forzán">
+                            <div class="avatar-head">
+                                <div class="avatar-hair"></div>
+                                <div class="avatar-face">
+                                    <div class="avatar-eyes">
+                                        <span class="eye"></span>
+                                        <span class="eye"></span>
+                                    </div>
+                                    <div class="avatar-smile"></div>
+                                </div>
+                            </div>
+                            <div class="avatar-neck"></div>
+                            <div class="avatar-body">
+                                <div class="avatar-shirt">FORZAN</div>
+                                <div class="avatar-vest"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Blog y Consejos</h2>
-            <div class="blog-grid">
-                <article class="blog-post">
-                    <h3>5 Ejercicios para Prevenir Lesiones en Escalada</h3>
-                    <p>Descubre rutinas simples que puedes hacer en casa para fortalecer tu cuerpo y reducir el riesgo de lesiones...</p>
-                    <a href="#" class="read-more">Leer más</a>
-                </article>
-                <article class="blog-post">
-                    <h3>La Importancia de la Postura en el Trabajo Diario</h3>
-                    <p>Cómo mantener una buena postura en la oficina y evitar dolores crónicos en espalda y cuello...</p>
-                    <a href="#" class="read-more">Leer más</a>
-                </article>
-                <article class="blog-post">
-                    <h3>Recuperación Después de una Lesión Deportiva</h3>
-                    <p>Guía completa para acelerar tu recuperación y volver a tu actividad favorita de forma segura...</p>
-                    <a href="#" class="read-more">Leer más</a>
-                </article>
+        <section id="servicios" class="services">
+            <div class="container">
+                <h2>Servicios</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Fisioterapia Especializada</h3>
+                        <p>Tratamientos personalizados para lesiones deportivas, dolores crónicos y rehabilitación post-quirúrgica.</p>
+                        <ul>
+                            <li>Valoración inicial completa</li>
+                            <li>Técnicas manuales avanzadas</li>
+                            <li>Ejercicios terapéuticos</li>
+                            <li>Prevención de lesiones</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Entrenamiento en Escalada</h3>
+                        <p>Clases individuales y grupales para todos los niveles, desde principiantes hasta escaladores avanzados.</p>
+                        <ul>
+                            <li>Técnicas de escalada segura</li>
+                            <li>Entrenamiento de fuerza específico</li>
+                            <li>Preparación física integral</li>
+                            <li>Entrenamiento mental</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Evaluación Postural</h3>
+                        <p>Análisis completo de tu postura y movimiento para identificar riesgos y áreas de mejora.</p>
+                        <ul>
+                            <li>Análisis biomecánico</li>
+                            <li>Recomendaciones personalizadas</li>
+                            <li>Ejercicios correctivos</li>
+                            <li>Seguimiento del progreso</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Consultas Online</h3>
+                        <p>Sesiones de fisioterapia y asesoramiento deportivo a distancia para mayor comodidad.</p>
+                        <ul>
+                            <li>Evaluación remota</li>
+                            <li>Planes de ejercicio personalizados</li>
+                            <li>Seguimiento virtual</li>
+                            <li>Soporte continuo</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="testimonios" class="testimonials">
-        <div class="container">
-            <h2>Lo que dicen mis pacientes</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p>"Después de mi lesión en la rodilla, José Manuel me ayudó a volver a escalar en solo 3 meses. Su experiencia en fisioterapia y escalada es invaluable."</p>
-                    <cite>- María García, Escaladora Profesional</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Los tratamientos de José Manuel aliviaron mi dolor crónico de espalda. Ahora puedo trabajar sin molestias gracias a sus ejercicios personalizados."</p>
-                    <cite>- Carlos Rodríguez, Oficinista</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Como principiante en escalada, José me enseñó las técnicas correctas y previno lesiones. ¡Recomiendo sus clases 100%!"</p>
-                    <cite>- Ana López, Escaladora Novata</cite>
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2>Blog y Consejos</h2>
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <h3>5 Ejercicios para Prevenir Lesiones en Escalada</h3>
+                        <p>Descubre rutinas simples que puedes hacer en casa para fortalecer tu cuerpo y reducir el riesgo de lesiones...</p>
+                        <a href="blog/ejercicios-escalada.html" class="read-more" aria-label="Leer más sobre ejercicios para prevenir lesiones en escalada">Leer más</a>
+                    </article>
+                    <article class="blog-post">
+                        <h3>La Importancia de la Postura en el Trabajo Diario</h3>
+                        <p>Cómo mantener una buena postura en la oficina y evitar dolores crónicos en espalda y cuello...</p>
+                        <a href="blog/postura-trabajo.html" class="read-more" aria-label="Leer más sobre postura en el trabajo diario">Leer más</a>
+                    </article>
+                    <article class="blog-post">
+                        <h3>Recuperación Después de una Lesión Deportiva</h3>
+                        <p>Guía completa para acelerar tu recuperación y volver a tu actividad favorita de forma segura...</p>
+                        <a href="blog/recuperacion-lesion.html" class="read-more" aria-label="Leer más sobre recuperación después de una lesión deportiva">Leer más</a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <p><strong>Teléfono:</strong> +34 123 456 789</p>
-                    <p><strong>Email:</strong> info@joseforzan.com</p>
-                    <p><strong>Dirección:</strong> Calle Ejemplo 123, Ciudad, País</p>
-                    <p><strong>Horarios:</strong> Lunes a Viernes: 9:00 - 19:00</p>
+        <section id="testimonios" class="testimonials">
+            <div class="container">
+                <h2>Lo que dicen mis pacientes</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p>"Después de mi lesión en la rodilla, José Manuel me ayudó a volver a escalar en solo 3 meses. Su experiencia en fisioterapia y escalada es invaluable."</p>
+                        <cite>- María García, Escaladora Profesional</cite>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Los tratamientos de José Manuel aliviaron mi dolor crónico de espalda. Ahora puedo trabajar sin molestias gracias a sus ejercicios personalizados."</p>
+                        <cite>- Carlos Rodríguez, Oficinista</cite>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Como principiante en escalada, José me enseñó las técnicas correctas y previno lesiones. ¡Recomiendo sus clases 100%!"</p>
+                        <cite>- Ana López, Escaladora Novata</cite>
+                    </div>
                 </div>
-                <form class="contact-form">
-                    <h3>Solicita tu Consulta Gratuita</h3>
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="tel" placeholder="Teléfono" required>
-                    <textarea placeholder="Describe tu problema o consulta" rows="5" required></textarea>
-                    <button type="submit">Enviar Consulta</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <p><strong>Teléfono:</strong> +52 228 215 4972</p>
+                        <p><strong>Email:</strong> info@joseforzan.com</p>
+                        <p><strong>Dirección:</strong> Calle Ejemplo 123, Xalapa, Verarcuz, México</p>
+                        <p><strong>Horarios:</strong> Lunes a Viernes: 7:00 - 12:00</p>
+                    </div>
+                    <form class="contact-form" role="form" aria-labelledby="contact-form-title">
+                        <h3 id="contact-form-title">Solicita tu Consulta Gratuita</h3>
+                        <input type="text" placeholder="Nombre" required aria-label="Tu nombre completo" aria-required="true">
+                        <input type="email" placeholder="Email" required aria-label="Tu dirección de email" aria-required="true">
+                        <input type="tel" placeholder="Teléfono" required aria-label="Tu número de teléfono" aria-required="true">
+                        <textarea placeholder="Describe tu problema o consulta" rows="5" required aria-label="Descripción de tu consulta" aria-required="true"></textarea>
+                        <button type="submit" aria-label="Enviar consulta">Enviar Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 José Manuel Forzán. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#">Facebook</a>
+                <a href="https://www.facebook.com/josemanuel.forzan" target="_blank" rel="noopener noreferrer" aria-label="Facebook de José Manuel Forzán">Facebook</a>
                 <a href="#">Instagram</a>
                 <a href="#">LinkedIn</a>
             </div>
         </div>
     </footer>
 
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/522282154972?text=Hola%20Jos%C3%A9%20Manuel%2C%20quiero%20agendar%20una%20consulta.%20Vengo%20desde%20tu%20sitio%20web." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp" title="Chatea por WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.272-.099-.47-.148-.669.149-.198.297-.767.966-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.58-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.361.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.617h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.647-.235-.374a9.86 9.86 0 0 1-1.514-5.24c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.892 6.994c-.003 5.45-4.437 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.87 11.87 0 0 0 5.683 1.449h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.353-8.414Z"></path>
+      </svg>
+    </a>
+
     <script src="script.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
