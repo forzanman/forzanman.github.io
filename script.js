@@ -42,39 +42,76 @@ document.addEventListener('DOMContentLoaded', function() {
  * Incluye validación básica y manejo de errores
  */
 function initializeFormHandling() {
-    const contactForm = document.querySelector('.contact-form');
-
+    const contactForm = document.getElementById('contact-form');
     if (!contactForm) {
         console.warn('Formulario de contacto no encontrado');
         return;
     }
 
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Validación adicional del formulario
-        if (!validateContactForm(contactForm)) {
-            return;
+        // Honeypot simple (bot detection)
+        const honeypot = contactForm.querySelector('input[name="_honeypot"]');
+        if (honeypot && honeypot.value.trim() !== '') {
+            console.warn('Bot detectado (honeypot)');
+            return; // Silencioso
+        }
+
+        if (!validateContactForm(contactForm)) return;
+
+        const endpoint = contactForm.dataset.endpoint || '';
+        const formData = new FormData(contactForm);
+
+        // Construir objeto plano
+        const payload = {};
+        formData.forEach((v, k) => { payload[k] = v; });
+
+        // UI estado: deshabilitar botón
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
         }
 
         try {
-            // Aquí iría la lógica para enviar el formulario a un servidor
-            // Por ahora, simulamos el envío
-            showSuccessMessage('¡Gracias por tu consulta! José Manuel se pondrá en contacto contigo pronto.');
-
-            // Limpiar el formulario después del envío
-            contactForm.reset();
-
-            // Enviar evento a Google Analytics si está configurado
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submission', {
-                    'event_category': 'engagement',
-                    'event_label': 'contact_form'
+            let sent = false;
+            if (endpoint.startsWith('https://')) {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
                 });
+                if (res.ok) {
+                    sent = true;
+                } else {
+                    const data = await res.json().catch(()=>({}));
+                    console.warn('Respuesta no OK', data);
+                }
             }
-        } catch (error) {
-            console.error('Error al enviar formulario:', error);
-            showErrorMessage('Hubo un error al enviar tu consulta. Por favor, inténtalo de nuevo.');
+
+            if (sent) {
+                showSuccessMessage('¡Gracias por tu consulta! Te responderé pronto.');
+                contactForm.reset();
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', { 'event_category': 'engagement', 'event_label': 'contact_form' });
+                }
+            } else {
+                // Fallback mailto
+                const subject = encodeURIComponent('Consulta desde sitio web');
+                const body = encodeURIComponent(`Nombre: ${payload.nombre || ''}\nEmail: ${payload.email || ''}\nTeléfono: ${payload.telefono || ''}\nMensaje:\n${payload.mensaje || ''}`);
+                window.location.href = `mailto:forzan.manu@outlook.com?subject=${subject}&body=${body}`;
+                showSuccessMessage('Abriendo tu cliente de correo para completar el envío.');
+            }
+        } catch (err) {
+            console.error('Error al enviar formulario', err);
+            showErrorMessage('No se pudo enviar. Intenta más tarde o escribe a forzan.manu@outlook.com');
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
         }
     });
 }
@@ -85,10 +122,10 @@ function initializeFormHandling() {
  * @returns {boolean} - True si es válido, false si no
  */
 function validateContactForm(form) {
-    const name = form.querySelector('input[type="text"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const phone = form.querySelector('input[type="tel"]').value.trim();
-    const message = form.querySelector('textarea').value.trim();
+    const name = form.querySelector('input[name="nombre"]').value.trim();
+    const email = form.querySelector('input[name="email"]').value.trim();
+    const phone = form.querySelector('input[name="telefono"]').value.trim();
+    const message = form.querySelector('textarea[name="mensaje"]').value.trim();
 
     // Validar nombre
     if (name.length < 2) {
@@ -104,14 +141,14 @@ function validateContactForm(form) {
     }
 
     // Validar teléfono (opcional pero si se ingresa, debe ser válido)
-    if (phone && phone.length < 9) {
+    if (phone && phone.replace(/[^0-9+]/g,'').length < 9) {
         showErrorMessage('Por favor, ingresa un teléfono válido.');
         return false;
     }
 
     // Validar mensaje
-    if (message.length < 10) {
-        showErrorMessage('Por favor, describe tu consulta con más detalle.');
+    if (message.length < 12) {
+        showErrorMessage('Describe tu consulta con un poco más de detalle (mínimo 12 caracteres).');
         return false;
     }
 
