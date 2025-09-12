@@ -94,45 +94,63 @@ nav {
 
 /* Sección Hero */
 .hero {
-    background: linear-gradient(135deg, #27ae60 0%, #f39c12 50%, #2c3e50 100%);
-    color: white;
-    padding: 150px 0 100px;
+    /* Fondo más neutro para resaltar el logo */
+    background: radial-gradient(circle at 35% 40%, #1e2a33 0%, #0e1419 55%, #06090c 100%);
+    color: #fff;
+    padding: 160px 0 120px;
     text-align: center;
     margin-top: 70px;
     position: relative;
     z-index: 0;
-    background-size: 200% 200%;
-    animation: gradientShift 16s ease infinite;
+    overflow: hidden;
 }
 
+/* Efecto sutil animado detrás (capa decorativa) */
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text fill="rgba(255,255,255,0.1)" font-size="20" y="50%">🏔️</text></svg>') repeat;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 0;
+    inset: 0;
+    background: conic-gradient(from 120deg at 50% 50%, rgba(39,174,96,0.18), rgba(243,156,18,0.14), rgba(52,152,219,0.15), rgba(39,174,96,0.18));
+    mix-blend-mode: overlay;
+    animation: spin 32s linear infinite;
+    opacity: .55;
+    pointer-events:none;
 }
+.hero::after {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.6) 65%,rgba(0,0,0,.85));
+    pointer-events:none;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Eliminado patrón anterior para claridad del logo */
 
 .hero-content {
     position: relative;
     z-index: 1;
 }
 
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
+.hero-content h2 { font-size: 3.1rem; margin-bottom: 1rem; font-weight: 700; letter-spacing:.5px; }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+.hero-content p { font-size: 1.15rem; margin-bottom: 2.2rem; opacity: .92; max-width:780px; margin-left:auto; margin-right:auto; }
+
+/* Logo grande dentro del hero */
+.hero-logo-wrapper { display:flex; justify-content:center; margin-bottom:2rem; }
+.hero-logo-box { background:rgba(255,255,255,0.06); padding:26px 30px; border:1px solid rgba(255,255,255,0.25); border-radius:28px; backdrop-filter: blur(6px) brightness(1.15); box-shadow:0 10px 34px -6px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08) inset; }
+.hero-logo-box img { width:180px; height:180px; display:block; filter: drop-shadow(0 8px 22px rgba(0,0,0,.55)) brightness(1.25); }
+
+@media (max-width: 860px){
+    .hero-content h2 { font-size:2.35rem; }
+    .hero-logo-box img { width:150px; height:150px; }
+}
+@media (max-width: 520px){
+    .hero-content h2 { font-size:1.95rem; }
+    .hero-logo-box { padding:18px 22px; }
+    .hero-logo-box img { width:130px; height:130px; }
+    .hero-content p { font-size:1rem; }
 }
 
 .cta-button {
