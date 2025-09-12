@@ -42,15 +42,6 @@ nav {
     margin: 0 auto;
 }
 
-/* Logo / marca */
-.logo img { height: 52px; width: auto; }
-.brand-intro h2 { font-size: 2.6rem; text-align: center; }
-.brand-intro p { text-align: center; font-size: 1.05rem; }
-@media (max-width: 768px){
-    .brand-intro h2 { font-size: 1.9rem; }
-    .brand-intro img { width: 100px; height: 100px; }
-}
-
 .logo-container {
     display: flex;
     align-items: center;
