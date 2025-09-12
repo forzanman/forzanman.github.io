@@ -28,7 +28,12 @@
     <header>
         <nav role="navigation" aria-label="Navegación principal">
             <div class="logo">
-                <img src="logo.svg" alt="ForzanMan Logo - Fisioterapia y Escalada" style="height: 50px;">
+                <a href="#inicio" style="display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;">
+                    <picture>
+                        <img src="images/brand-mark.svg" alt="Marca Forzán" width="54" height="54" style="display:block;">
+                    </picture>
+                    <span style="font-weight:700;color:#2c3e50;font-size:1.05rem;letter-spacing:.5px;">Forzán Terapia & Escalada</span>
+                </a>
             </div>
             <ul class="nav-links" role="menubar">
                 <li role="none"><a href="#inicio" role="menuitem">Inicio</a></li>
@@ -43,9 +48,12 @@
 
     <section id="inicio" class="hero" role="banner">
         <div class="hero-content">
-            <h2>Recupera tu Movimiento y Escala con Método</h2>
-            <p>Licenciado en Terapia Física | 10 años escalando | 8 años guiando a escaladores</p>
-            <a href="#contacto" class="cta-button">Agenda tu Consulta</a>
+            <div class="brand-intro" style="display:flex;flex-direction:column;align-items:center;gap:1.4rem;">
+                <img src="images/brand-mark.svg" alt="Símbolo Forzán" width="130" height="130" style="filter:drop-shadow(0 8px 22px rgba(0,0,0,.35));" loading="eager" decoding="async">
+                <h2 style="margin:0;">Recupera tu Movimiento y Escala con Método</h2>
+                <p style="max-width:680px;">Terapia física aplicada + planificación y dosificación inteligente. Integrando cuerpo, mente y emoción para construir consistencia real.</p>
+                <a href="#contacto" class="cta-button">Agenda tu Consulta</a>
+            </div>
         </div>
     </section>
 
