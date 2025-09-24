@@ -180,6 +180,27 @@ nav {
     font-size: 1.1rem;
 }
 
+/* Accesibilidad: ocultar visualmente pero disponible para lectores de pantalla */
+.sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+
+/* Tarjeta hero de filosofía/visión */
+.about-hero-card {
+    background: linear-gradient(135deg, rgba(39,174,96,0.08), rgba(52,152,219,0.08));
+    border: 1px solid rgba(44,62,80,0.12);
+    border-radius: 14px;
+    padding: 1.2rem 1.2rem 1.1rem;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    margin-bottom: 1.2rem;
+}
+.about-hero-card p { font-size: 1.05rem; line-height: 1.7; color:#2c3e50; }
+.about-hero-card .pill {
+    display:inline-block;
+    margin-bottom: .6rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color:#fff; font-weight:700; letter-spacing:.4px; font-size:.7rem;
+    padding: .32rem .7rem; border-radius: 999px;
+}
+
 .about-image {
     flex: 1;
 }
