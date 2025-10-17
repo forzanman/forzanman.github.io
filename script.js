@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
     })();
+
+    // Fijar y escalar logo al hacer scroll
+    initializeLogoFixedOnScroll();
 });
 
 /**
@@ -159,7 +162,7 @@ function validateContactForm(form) {
  * Inicializa el smooth scrolling para los enlaces de navegación
  */
 function initializeSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-links a, .page-menu a');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -351,6 +354,20 @@ function showErrorMessage(message) {
             toast.remove();
         }
     }, 5000);
+}
+
+/**
+ * Inicializa la fijación y escalado del logo al hacer scroll
+ */
+function initializeLogoFixedOnScroll() {
+    const logo = document.querySelector('.site-logo-abs');
+    if (!logo) return;
+    const onScroll = () => {
+        if (window.scrollY > 0) logo.classList.add('is-fixed');
+        else logo.classList.remove('is-fixed');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 }
 
 // Funciones globales para el popup (accesibles desde HTML)
